@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+.footer{
+    font-family: "Poppins", sans-serif;
+    margin:0;
+    font-weight: 700;
+    position: relative;
+    background-color: #8f0023;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+} 
+
+.mywork, .connect, .findme{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.connect a{
+    text-decoration: none;
+}
+
+.connect h1{
+    text-align: center;
+    font-size: 3rem;
+    color: #ebc8a9;
+    cursor: pointer;
+}
+
+.connect h1:hover{
+    -webkit-text-stroke: 2px #ebc8a9;
+    -webkit-text-fill-color: transparent;
+}
+
+.mywork ul, .findme ul{
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    padding:0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mywork ul li, .findme ul li{
+    /* margin-bottom: 2rem; */
+    font-size: 0.8rem;
+    cursor:pointer;
+    display: inline-block;
+    color: #f8eee7;
+    background: linear-gradient(to right, #f8eee7 50%, transparent 50%);
+    background-size: 210% 100%;
+    background-position: right bottom;
+    transition: 0.5s ease;
+    padding: 0.1rem 0.5rem;
+}
+.mywork ul li:hover, .findme ul li:hover{
+    color: #69172b;
+    background-position: left bottom;
+}
+
+.footer h2{
+    display: block;
+    color:#ebc8a9;
+    font-size: 1.7rem;
+    margin: 2rem 0 0 0;
+    text-align: center;
+    width:100%;
+}
+
+/* media queries */
+
+@media (min-width: 1000px) {
+    .footer{
+        flex-direction: row;
+    }
+
+    .connect h1{
+        font-size: 5rem;
+    }
+
+    .mywork, .connect, .findme{
+        width: 33%;
+        flex-direction: row;
+    }
+
+    .footer h2{
+        transform: rotateZ(-90deg);
+        margin:0;
+        font-size: 3.4rem;
+    }
+
+    .mywork ul, .findme ul{
+        align-items: flex-start;
+    }
+
+    .mywork ul li, .findme ul li{
+        font-size: 1.2rem;
+    }
+
+}

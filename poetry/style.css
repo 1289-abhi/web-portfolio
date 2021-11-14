@@ -1,0 +1,238 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+/* initial */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.overflow{
+    overflow: hidden;
+}
+
+/* quotes slideshow */
+ 
+.quotes-slideshow{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    background: url("cover.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.quotes-slideshow .cover-background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+}
+
+.quotes-slideshow .quote{
+    font-size: 2rem;
+    font-family: 'Sacramento', cursive;
+    width: 25%;
+    height:auto;
+    text-align: center;
+    animation-name: appear;
+    animation-duration: 5.1s;
+    animation-iteration-count: infinite;
+    color: #f8eee7; 
+}
+
+.quotes-slideshow .author{
+    font-size: 1.4rem;
+    font-family: 'Caveat', cursive;
+    font-weight: bold;
+    animation-name: appear;
+    animation-duration: 5.1s;
+    animation-iteration-count: infinite;
+    color: #ebc8a9;
+}
+
+@keyframes appear{
+    0%{
+        transform: translateY(30px);
+        opacity: 0.2;
+    }
+    25%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    95%{
+        opacity:0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+/* poetries */
+
+.poetries{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f8eee7;
+}
+
+.poetries .poetry{
+    font-family: 'Kalam', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 2rem 5%;
+    padding: 2rem 4rem;
+    max-height: 60vh;
+    overflow: hidden;
+    font-size: 1.4rem;
+    line-height: 2;
+    background: #f8eee7;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    color: #69172b;
+}
+
+.poetries .poetry h1{
+    display: hidden;
+}
+
+.poetries .poetry .read-more{
+    background: #f8eee7;
+    color: #ebc8a9;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.5s ease;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.poetries .poetry .read-more:hover{
+    color:#69172b;
+}
+
+.poetries .poetry .read-more:focus{
+    outline: none;
+}
+
+/* full view of poetries */
+
+.poetry-full{
+    height: 100vh;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    
+}
+
+.poetry-full .poetry-title{
+    font-family: 'Kalam', cursive;
+    line-height: 3;
+    font-size: 2rem;
+    width: 50%;
+    height: 5rem;
+    margin:2rem auto;
+    color: #f8eee7;
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+}
+
+.poetry-full .poetry-content{
+    font-family: 'Kalam', cursive;
+    max-height: 70vh;
+    color: #69172b;
+    background: #f8eee7;
+    width: 50%;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 2;
+    overflow-y: scroll;
+}
+
+.poetry-full .poetry-content::-webkit-scrollbar{
+    display: block;
+    width: 5px;
+}
+
+.poetry-full .poetry-content::-webkit-scrollbar-track{
+    background: #f8eee7;
+}
+
+.poetry-full .poetry-content::-webkit-scrollbar-thumb{
+    background: #ebc8a9;
+    border-radius: 50px;
+}
+
+.poetry-full .poetry-content::-webkit-scrollbar-thumb:hover{
+    background: #ebc;
+}
+
+.poetry-full .close-icon{
+    position:absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 3rem;
+    color: rgba(105,23,43,0.7);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.poetry-full .close-icon:hover{
+    transform: rotateZ(-90deg);
+}
+
+.horizontal-line{
+    width:30%;
+    height: 0.05rem;
+    border: 0;
+    background: #69172b;
+}
+
+/* Media Queries */
+
+@media (min-width: 1000px) {
+    .quotes-slideshow .quote{
+        font-size: 3rem;
+    }
+    .poetry-full .poetry-title{
+        font-size: 3rem;
+        line-height: 2;
+    }
+}

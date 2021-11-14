@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Initial */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.overflow{
+    overflow: hidden;
+}
+
+
+/* project-homepage */
+
+.project-home{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+    text-align: center;
+    height: 100vh;
+    background: url("https://t3n.de/magazin/wp-content/uploads/2014/08/Projektmanagement1.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.project-home .cover-image{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(105, 23, 43, 0.1);
+}
+
+.project-home .project-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+    margin: 0;
+    color: #69172b;
+    font-size: 4rem;
+    z-index: 3;
+
+}
+
+/* project video demo container */
+
+.project-parent{
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-child-container{
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+.project-child-container .cover-image{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(105, 23, 43, 0.1);
+}
+
+.project-child-container .project-description{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    font-weight: 100;
+    background-color: rgba(105, 23, 43, 0.25);
+    color: #f8eee7;
+    font-size: 0.9rem;
+    line-height: 2;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    padding: 0 1rem;
+    z-index: 3;
+}
+
+.project-child-container .project-description p{
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: opacity 1s ease, transform 1s ease;
+    will-change: opacity;
+}
+
+.project-description a{
+    text-decoration: none;
+}
+
+.project-description button{
+    position: relative;
+    font-size: 1rem;
+    font-family: inherit;
+    padding: 0.5rem 3rem;
+    color: #f8eee7;
+    border: 4px solid #f8eee7;
+    font-weight: bold;
+    transform: translateY(2rem);
+    opacity: 0; 
+    will-change: opacity, transform;
+    transition: background-position 0.4s ease-out, opacity 1s ease, transform 1s ease;
+    background: linear-gradient(to right, #f8eee7 50%, transparent 50%);
+    background-size: 210% 100%;
+    background-position: right bottom;
+}
+
+.project-description button.is-visible{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.project-child-container button:hover{
+    color: #69172b;
+    background-position: left bottom;
+    cursor: pointer;
+}
+
+.project-child-container .project-description p.is-visible{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.project-child-container:nth-of-type(2) .project-description{
+    left: 0;
+}
+
+.project-child-container:nth-of-type(1) .project-description, .project-child-container:nth-of-type(3) .project-description{
+    right: 0;
+}
+
+.project-child-container .project-video{
+    width: 100%;
+    height: 100%;
+}
+
+/* more projects */
+
+.more-projects{
+    height: 100vh;
+    width: 100%;
+    background:url('https://t3n.de/magazin/wp-content/uploads/2014/08/Projektmanagement1.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    color: #69172b;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+}
+
+.more-projects .cover-image{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(105, 23, 43, 0.1);
+}
+
+.more-projects h1{
+    font-size: 3rem;
+    margin: 2rem 0 0 0;
+    opacity: 0;
+    z-index: 2;
+    transform: translateY(5rem);
+    will-change: tranform, opacity;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.more-projects h1.is-visible{
+    transform: translateY(0rem);
+    opacity: 1;
+}
+
+.more-projects .links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;
+    height: 60%;
+    z-index: 2;
+}
+
+.more-projects .links .btn{
+    width: 10rem;
+    color: #69172b;
+    text-align: center;
+    margin: 1rem auto;
+    text-decoration: none;
+    height: 10%;
+    font-weight: 700;
+    border: 0;
+    line-height: 2;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: inherit;    
+    transition: background-position .4s ease-out, transform 1s ease, opacity 1s ease, color 0.4s ease-out;
+    opacity: 0;
+    transform: translateY(5rem);
+    will-change: tranform, opacity;
+}
+
+.more-projects .links .btn.is-visible{
+    transform: translateY(0rem);
+    opacity: 1;
+}
+
+.more-projects .links .btn:hover{
+  background-position: left bottom;
+  color:#f8eee7;
+  cursor: pointer;
+}
+
+.more-projects .links .github{
+    background: linear-gradient(to right, #24292f 50%, #f8eee7 50%);
+    background-size: 210% 100%;
+    background-position: right bottom;
+}
+
+.more-projects .links .linkedin{
+    background: linear-gradient(to right, #0a66c2 50%, #f8eee7 50%);
+    background-size: 210% 100%;
+    background-position: right bottom;
+}
+
+.more-projects .links .inkitt{
+    background: linear-gradient(to right, #ffc0cb 50%, #f8eee7 50%);
+    background-size: 210% 100%;
+    background-position: right bottom;
+}
+
+.more-projects .links .hackerrank{
+    background: linear-gradient(to right, #32c766 50%, #f8eee7 50%);
+    background-size: 210% 100%;
+    background-position: right bottom;
+}
+
+.more-projects .links .codewars{
+    background: linear-gradient(to right, #bb432c 50%, #f8eee7 50%);
+    background-size: 210% 100%;
+    background-position: right bottom;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+/* media queries */
+
+@media (min-width: 1000px) {
+    .project-home .project-title{
+        font-size: 8rem;
+    }
+    .project-child-container .project-description{
+        width: 30%;
+    }
+    .project-child-container{
+        height: 100vh;
+    }
+
+    .more-projects h1{
+        font-size: 5rem;
+    }
+    .project-child-container .project-description{
+        font-size: 1.4rem;
+    }
+    .project-description button{
+        padding: 0.5rem 5rem;
+    }
+
+    .more-projects .links .btn{
+        width: 100%;
+    }
+}

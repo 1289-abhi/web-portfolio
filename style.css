@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Initial */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.overflow{
+    overflow: hidden;
+}
+
+
+/* sections */
+
+.section-title{
+    height: 100vh;
+    width: 100%;
+    background: black;
+    color: white;
+    font-size: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projects .content, .hobbies .content{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* For Welcome Screen */
+
+.welcome-screen{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #ebc8a9;
+    background: url('https://images.unsplash.com/photo-1514388614019-c755c395185c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.welcome-screen::before{
+    content: '';
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    position: absolute;
+    background-color: rgba(105,23,43,0.3);
+    
+}
+
+.welcome-screen h1{
+    z-index: 3;
+    animation-name: appear;
+    animation-duration: 5.1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes appear{
+    0%{
+        opacity: 0.2;
+    }
+    25%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    85%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
+/* About */
+
+.about{
+    background: #F8eee7;
+    text-align: center;
+}
+
+.about .content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.about p:nth-of-type(1){
+    font-size: 1rem;
+    font-weight: 300;
+    transform: translateY(3rem);
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.about p:nth-of-type(2){
+    font-size: 0.7rem;
+    line-height: 1.8;
+    width: 40%;
+    font-weight: 100;
+    transform: translateY(3rem);
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.about p:nth-of-type(3){
+    font-size: 0.8rem; 
+    transform: translateY(3rem);
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.about p a{
+    text-decoration: none;
+    color: black;
+    background: linear-gradient(to right, #69172b 50%, transparent 50%);
+    background-position: right bottom;
+    background-size: 200% 100%;
+    transition: 0.5s ease;
+    font-weight: 700;
+}
+
+.about p a:hover{
+    background-position: left bottom;
+    color: #f8eee7;
+}
+
+.about h2{
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ebc8a9;
+    transform: translateY(3rem);
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.about .content hr{
+    margin: 2rem auto;
+    width: 30%;
+    height: 0.1rem;
+    border: 0;
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    will-change: transform, opacity;
+    transform: translateY(3rem);
+    background-color: #8f0023;
+}
+
+.about .content hr:nth-of-type(1){
+    margin-top: 3rem;
+}
+
+.about .content hr.is-visible, .about .content h2.is-visible, .about .content p.is-visible{
+    transform: translateY(0);
+    opacity: 1;
+}
+/* projects */
+
+.projects{
+    width: 100%;
+}
+
+.projects .section-title{
+    background: url('https://images.unsplash.com/photo-1571666521805-f5e8423aba9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    color: #69172b;
+    font-weight: 700;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projects .content .split{
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 34%;
+    height: 100%;
+}
+
+.projects .content .split h1{ 
+    color: #F8eee7;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1rem;
+    transform: translateX(-50%) translateY(0);
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.projects .content .split h1.is-visible{
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 1;
+}
+
+.projects .content .split.typing-test{
+    left:0;
+    background: url('https://images.unsplash.com/reserve/LJIZlzHgQ7WPSh5KVTCB_Typewriter.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=396&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.projects .content .split.blogging{
+    left:50%;
+    transform: translateX(-50%);
+    background: url('https://images.unsplash.com/photo-1519682337058-a94d519337bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.projects .content .split.currency{
+    right:0;
+    background: url('https://images.unsplash.com/photo-1500496733680-167c3db69389?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1041&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+.projects .content .split::before{
+    content: '';
+    position: absolute;
+    width:100%;
+    height: 100%;
+    background-color: rgba(105,23,43,0.1);
+}
+
+.projects .content .split .cover{
+    transition: 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(105,23,43,0.6);
+}
+
+.projects .content .split .cover .btn{
+    font-size: 1.5rem;
+    color: #f8eee7;
+    text-decoration: none;
+    padding: 0.5rem 3rem;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #f8eee7 50%, transparent 50%);
+    background-size: 210% 110%;
+    background-position: right bottom;
+    transition: 0.5s ease;
+}
+
+.projects .content .split .cover .btn:hover{
+    background-position: left bottom;
+    color: #69172b;
+}
+
+.projects .content .split .cover span{
+    padding: 1rem 1rem;
+    font-size: 0.7rem;
+    border-radius: 25px;
+    margin: 0.5rem auto;
+    color: #69172b;
+    background: #F8eee7;
+}
+
+.projects .content .split:hover .cover{
+    opacity: 1;
+}
+
+.projects .content .split:hover h1{
+    opacity: 0;
+}
+
+/* Hobbies */
+
+.hobbies{
+    width: 100%;
+    font-size: 2rem;  
+}
+
+.hobbies .section-title{
+    background: url('https://previews.123rf.com/images/dimapolie/dimapolie1804/dimapolie180400066/98944772-vector-hobby-pattern-hobby-seamless-background.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    font-weight: 700;
+    color: #69172b;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hobbies .split .btn{
+    position: absolute;
+    top:60%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #F8eee7;
+    background: transparent;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    border: solid 4px #F8eee7;
+    background: linear-gradient(to right, #f8eee7 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: 0.5s ease;
+}
+
+.hobbies .split .btn:hover{
+    background-position: left bottom;
+    color: #69172b;
+}
+
+.split h1{
+    color:#F8eee7;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    font-size: 1rem;
+    transform: translateX(-50%);
+
+}
+.split{
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+}
+
+.split.poetry{
+    left:0;
+    background: url('https://images.unsplash.com/photo-1506963648278-b4c628bd4536?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.split.photography{
+    right:0;
+    background: url('https://images.unsplash.com/photo-1609323169878-b57e5a78bb03?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.split.poetry::before, .split.photography::before{
+    content: '';
+    position: absolute;
+    width:100%;
+    height: 100%;
+    background-color: rgba(105,23,43,0.3);
+}
+
+.split.poetry, .split.photography{
+    transition: all 0.8s ease-in-out;
+}
+
+.hover-left .poetry{
+    width: 70%;
+}
+
+.hover-left .photography{
+    width: 30%;
+}
+
+.hover-right .poetry{
+    width: 30%;
+}
+
+.hover-right .photography{
+    width: 70%;
+}
+
+/* media Queries */
+
+@media (min-width: 600px) {
+    .about p:nth-of-type(1){
+        font-size: 2rem;
+    }
+
+    .about p:nth-of-type(2){
+        font-size: 1.5rem;
+    }
+
+    .about p:nth-of-type(3){
+        font-size: 1.6rem;
+    }
+
+    .about h2{
+        font-size: 2rem;
+    }
+
+    .projects .section-title, .hobbies .section-title{
+        font-size: 4rem;
+    }
+
+    .projects .content .split h1{
+        font-size: 2.5rem;
+    }
+    .projects .content .split .cover span{
+        font-size: 1.5rem;
+    }
+
+    .split h1{
+        font-size: 2rem;
+    }
+    
+}
+
+@media (min-width: 1000px) {
+    .welcome-screen{
+        font-size: 4rem;
+    }
+
+    .projects .section-title, .hobbies .section-title{
+        font-size: 8rem;
+    }
+
+    .projects .content .split h1{
+        font-size: 4rem;
+    }
+
+    .hobbies .split .btn{
+        padding: 0.5rem 3rem;
+        font-size: 2rem;
+    }
+    .split h1{
+        font-size: 4rem;
+    }
+}

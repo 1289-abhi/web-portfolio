@@ -1,0 +1,128 @@
+/* Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+/* Initial */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.overflow{
+    overflow: hidden;
+}
+
+/* contact-form */
+
+.form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: #f8eee7;
+}
+
+.container{
+    padding: 1.5rem 3rem;
+    background: #8f0023;
+}
+
+.container h1{
+    font-size: 2.5rem;
+    color: #ebc8a9;
+    padding: 0;
+    margin-bottom: 1rem;
+
+}
+
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    color: #8f0023;
+    background: linear-gradient(to right, #ebc8a9 50%, #f8eee7 50%);
+    background-size: 210% 100%;
+    transition: 0.5s ease;
+    background-position: right bottom;
+    padding: 1rem;
+    font-family: inherit;
+    font-size: 1.5rem;
+    border: 0;
+}
+
+.btn:hover{
+    background-position: left bottom;
+    color: #69172b;
+}
+
+.btn:focus{
+    outline:0;
+}
+
+.btn:active{
+    transform: scale(0.98);
+}
+
+.form-control{
+    position: relative;
+    margin: 1.5rem 0 1rem;
+    width: 20rem;
+}
+
+.form-control input, .form-control textarea{
+    background: transparent;
+    border: 0;
+    border-bottom: 2px #f8eee7 solid;
+    display: block;
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    font-family: inherit;
+    transition: border-bottom-color 0.3s ease;
+    caret-color: #ebc8a9;
+    color: #f8eee7;
+}
+
+.form-control textarea{
+    resize: none;
+}
+
+.form-control input:focus, .form-control input:valid, .form-control textarea:focus{
+    outline: none;
+    border-bottom-color: #ebc8a9;
+}
+
+.form-control label{
+    position: absolute;
+    color: #ebc8a9;
+    top: 1rem;
+    left: 0;
+}
+
+.form-control label span{
+    display: inline-block;
+    font-size: 1.1rem;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span,
+.form-control textarea:focus + label span
+{
+    color: #f8eee7;
+    transform: translateY(-30px);
+}
+
+/* Media Queries */
+
+@media (min-width:1000px) {
+    .form-control{
+        width: 40rem;
+    }
+}
